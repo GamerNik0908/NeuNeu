@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neues Passwort – Fakturo</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<div class="auth">
+  <aside class="auth-side">
+    <a href="/" class="brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4fd8"/><path d="M10 9h12M10 15h8M10 21h5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="22" cy="21" r="3" fill="#6ee7a8"/></svg>Fakturo</a>
+    <div>
+      <h2>Weniger Papierkram. Mehr Zeit für deine Kunden.</h2>
+      <ul>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Rechnungen mit allen Pflichtangaben in 2 Minuten</li>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>E-Rechnung (ZUGFeRD &amp; XRechnung) inklusive</li>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Per E-Mail versenden, Zahlungen im Blick behalten</li>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Kostenlos starten, monatlich kündbar</li>
+      </ul>
+    </div>
+    <span class="auth-foot"><a href="/legal/impressum">Impressum</a> · <a href="/legal/datenschutz">Datenschutz</a></span>
+  </aside>
+  <main class="auth-main">
+    <div class="auth-card">
+      <a href="/" class="brand auth-mobile-brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4fd8"/><path d="M10 9h12M10 15h8M10 21h5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="22" cy="21" r="3" fill="#6ee7a8"/></svg>Fakturo</a>
+      <h1>Neues Passwort festlegen</h1>
+      <p class="sub">Wähle ein neues Passwort mit mindestens 8 Zeichen.</p>
+      <form id="authForm" data-mode="reset" novalidate>
+        <div class="form-error" id="formError" role="alert"></div>
+        <div class="field"><label for="password">Neues Passwort</label><div class="pw-wrap"><input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required><button type="button" class="pw-toggle" aria-label="Passwort anzeigen" data-pw>Anzeigen</button></div></div>
+        <button class="btn btn-primary btn-block btn-lg" type="submit">Passwort speichern</button>
+      </form>
+      <p class="auth-switch"><a href="/forgot">Neuen Link anfordern</a></p>
+    </div>
+  </main>
+</div>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fakturo – Rechnungen schreiben in 2 Minuten</title>
-  <meta name="description" content="Fakturo ist das Rechnungsprogramm für Selbstständige, Freelancer und Kleinunternehmer. Rechnungen & Angebote in Minuten erstellen, offene Posten im Blick behalten, Zahlungserinnerungen verschicken. Kostenlos starten.">
+  <title>Fakturo – Rechnungen & E-Rechnungen in 2 Minuten</title>
+  <meta name="description" content="Rechnungsprogramm für Selbstständige, Freelancer und Kleinunternehmer: Rechnungen mit allen Pflichtangaben, E-Rechnung (ZUGFeRD & XRechnung), E-Mail-Versand, Zahlungserinnerungen. Kostenlos starten.">
   <meta property="og:title" content="Fakturo – Rechnungen schreiben in 2 Minuten">
   <meta property="og:description" content="Rechnungen & Angebote für Selbstständige. Kostenlos starten, monatlich kündbar.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
@@ -23,7 +21,7 @@
     </a>
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="#funktionen">Funktionen</a>
-      <a href="#so-gehts">So geht's</a>
+      <a href="#e-rechnung">E-Rechnung</a>
       <a href="#preise">Preise</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -42,14 +40,14 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="pill"><b>Neu</b> Angebote mit einem Klick in Rechnungen umwandeln</div>
+        <a class="pill" href="#e-rechnung"><b>Neu</b> E-Rechnung (ZUGFeRD &amp; XRechnung) inklusive →</a>
         <h1>Rechnungen schreiben in <span class="hl">2&nbsp;Minuten.</span> Nicht in 2&nbsp;Stunden.</h1>
-        <p class="hero-lead">Fakturo ist das Rechnungsprogramm für Selbstständige, Freelancer und Kleinunternehmer. Professionelle Rechnungen und Angebote erstellen, offene Beträge im Blick behalten – und schneller bezahlt werden.</p>
+        <p class="hero-lead">Das Rechnungsprogramm für Selbstständige, Freelancer und Kleinunternehmer. Rechnungen mit allen Pflichtangaben schreiben, als E-Rechnung per E-Mail verschicken, offene Beträge im Blick behalten – und schneller bezahlt werden.</p>
         <div class="hero-actions">
           <a href="/register" class="btn btn-primary btn-lg">Kostenlos starten
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#preise" class="btn btn-secondary btn-lg">Preise ansehen</a>
+          <button type="button" class="btn btn-secondary btn-lg" data-demo>Live-Demo ansehen</button>
         </div>
         <ul class="trust-line">
           <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Für immer kostenloser Plan</li>
@@ -71,7 +69,7 @@
               <div class="mock-row"><div class="mock-input">SEO-Basis-Setup</div><div class="mock-input">400 €</div></div>
               <div class="mock-label">Zahlungsziel</div>
               <div class="mock-input">14 Tage</div>
-              <div class="mock-btn">Als PDF speichern</div>
+              <div class="mock-btn">Abschließen &amp; senden</div>
             </div>
             <div class="mock-paper">
               <div class="ph">
@@ -79,7 +77,7 @@
                 <div class="mock-muted" style="text-align:right">Lena Weber Design<br>Hamburg</div>
               </div>
               <div class="mock-muted">Nordlicht Studio GmbH<br>Hafenstraße 12, 20457 Hamburg</div>
-              <h4 style="margin-top:14px">Rechnung RE-2026-0042</h4>
+              <h4 style="margin-top:14px">Rechnung RE-2026-0042 <span class="mock-chip">✓ E-Rechnung</span></h4>
               <div class="mock-muted">Datum: 11.10.2026 · Fällig: 25.10.2026</div>
               <div class="mock-lines">
                 <div><span>Webdesign Landingpage</span><span>1.200,00 €</span></div>
@@ -103,8 +101,8 @@
     <div class="container facts-grid">
       <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg><span><b>Pflichtangaben</b> nach § 14 UStG vorgesehen</span></div>
       <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Kleinunternehmer</b> nach § 19 UStG? Ein Klick.</span></div>
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/></svg><span><b>Fortlaufende Nummern</b> automatisch</span></div>
-      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span><b>PDF &amp; CSV</b> für Kunden und Steuerberatung</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/></svg><span><b>Lückenlose Nummern</b>, unveränderbar nach Abschluss</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>E-Rechnung</b> nach EN 16931 – geprüft</span></div>
     </div>
   </section>
 
@@ -141,8 +139,32 @@
     </div>
   </section>
 
+
+  <!-- E-RECHNUNG -->
+  <section class="section soft" id="e-rechnung">
+    <div class="container einv-grid">
+      <div>
+        <span class="eyebrow">E-Rechnungspflicht</span>
+        <h2>Die E-Rechnung kommt. Du bist schon bereit.</h2>
+        <p class="lead-muted">Seit 2025 müssen Unternehmen in Deutschland E-Rechnungen empfangen können – und schrittweise auch selbst verschicken. Mit Fakturo musst du dich darum nicht kümmern: Jede abgeschlossene Rechnung enthält automatisch die maschinenlesbare E-Rechnung.</p>
+        <ul class="einv-points">
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>ZUGFeRD im PDF</b> – ein PDF für Menschen, mit eingebetteter XML-Rechnung für die Buchhaltungssoftware deines Kunden.</span></li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>XRechnung</b> – für Behörden und Großkunden mit einem Klick als XML, inklusive Leitweg-ID.</span></li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Geprüft gegen die offiziellen Regeln</b> (EN 16931 und XRechnung 3.0) – für Regelbesteuerung, Kleinunternehmer, Reverse-Charge und Drittland.</span></li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Im kostenlosen Plan enthalten</b> – weil es Pflicht ist, nicht Luxus.</span></li>
+        </ul>
+      </div>
+      <ol class="einv-timeline" aria-label="Zeitplan der E-Rechnungspflicht">
+        <li class="done"><span class="when">seit 01.01.2025</span><b>Empfangen</b><span>Alle Unternehmen müssen E-Rechnungen annehmen können.</span></li>
+        <li><span class="when">ab 01.01.2027</span><b>Versenden ab 800.000 € Umsatz</b><span>Größere Unternehmen müssen E-Rechnungen ausstellen.</span></li>
+        <li><span class="when">ab 01.01.2028</span><b>Versenden für alle</b><span>Pflicht für alle Unternehmen bei Rechnungen an andere Unternehmen.</span></li>
+        <li class="note"><span>Kleinunternehmer (§ 19 UStG) sind von der Ausstellungspflicht ausgenommen – mit Fakturo bist du trotzdem auf der sicheren Seite, wenn deine Kunden E-Rechnungen verlangen.</span></li>
+      </ol>
+    </div>
+  </section>
+
   <!-- FUNKTIONEN -->
-  <section class="section soft" id="funktionen">
+  <section class="section" id="funktionen">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Funktionen</span>
@@ -153,39 +175,54 @@
         <div class="feature">
           <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
           <h3>Rechnungen mit Live-Vorschau</h3>
-          <p>Du siehst beim Tippen, wie deine Rechnung aussieht. Mit einem Klick als PDF speichern oder drucken.</p>
+          <p>Du siehst beim Tippen, wie deine Rechnung aussieht. Häufige Positionen schlägt Fakturo automatisch vor.</p>
         </div>
         <div class="feature">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="m9 10 2 2 4-4"/></svg></div>
-          <h3>Angebote <span class="plan-badge">Pro</span></h3>
-          <p>Schreibe Angebote im gleichen Look – und mach daraus nach der Zusage per Klick eine Rechnung.</p>
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg></div>
+          <h3>Direkt per E-Mail versenden</h3>
+          <p>Rechnung abschließen und mit PDF im Anhang verschicken – Antworten deiner Kunden landen in deinem Postfach.</p>
         </div>
         <div class="feature">
           <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
           <h3>Offene Posten im Blick</h3>
-          <p>Dein Dashboard zeigt Umsatz, offene und überfällige Beträge. Du weißt immer, wo du stehst.</p>
+          <p>Dashboard mit offenen, überfälligen und bezahlten Beträgen, Umsatz pro Monat und Ø Zahlungsdauer.</p>
         </div>
         <div class="feature">
           <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
           <h3>Zahlungserinnerungen <span class="plan-badge">Pro</span></h3>
-          <p>Höfliche Erinnerung, 1. und 2. Mahnung – als fertiger Text, den du direkt per E-Mail versendest.</p>
+          <p>Höfliche Erinnerung, 1. und 2. Mahnung – fertig formuliert, mit Rechnung im Anhang, mit einem Klick verschickt.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="m9 10 2 2 4-4"/></svg></div>
+          <h3>Angebote <span class="plan-badge">Pro</span></h3>
+          <p>Angebote im gleichen Design – nach der Zusage mit einem Klick zur Rechnung.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m5.7 5.7 12.6 12.6"/></svg></div>
+          <h3>Saubere Stornorechnungen</h3>
+          <p>Fehler passiert? Fakturo erstellt eine korrekte Stornorechnung mit eigener Nummer – so wie es das Finanzamt erwartet.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
+          <h3>Kunden im Ausland</h3>
+          <p>Reverse-Charge für EU-Firmen und Leistungen in Drittländer – der richtige Steuerhinweis kommt automatisch.</p>
         </div>
         <div class="feature">
           <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
           <h3>Wiederkehrende Rechnungen <span class="plan-badge">Business</span></h3>
-          <p>Retainer, Wartungsverträge, Mieten: Fakturo erstellt die Rechnung jeden Monat automatisch für dich.</p>
+          <p>Retainer, Wartung, Hosting: Fakturo legt die Rechnung jeden Monat automatisch für dich an.</p>
         </div>
         <div class="feature">
           <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg></div>
           <h3>Export für die Steuer <span class="plan-badge">Pro</span></h3>
-          <p>Alle Rechnungen eines Jahres als CSV – sauber aufbereitet für Excel, Steuerberatung oder EÜR.</p>
+          <p>Alle Rechnungen eines Jahres als CSV mit Steuersätzen getrennt – für Steuerberatung, EÜR und Excel.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SO GEHT'S -->
-  <section class="section" id="so-gehts">
+  <section class="section soft" id="so-gehts">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">So geht's</span>
@@ -201,7 +238,7 @@
   </section>
 
   <!-- RECHNER -->
-  <section class="section soft">
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Lohnt sich das?</span>
@@ -250,14 +287,15 @@
       <div class="pricing">
         <div class="price-card">
           <h3>Starter</h3>
-          <p class="price-desc">Zum Ausprobieren und für den gelegentlichen Auftrag.</p>
+          <p class="price-desc">Für den gelegentlichen Auftrag – mit allem, was Pflicht ist.</p>
           <div class="price"><span class="amount">0 €</span><span class="per">/ Monat</span></div>
           <div class="price-note">Für immer kostenlos</div>
           <a href="/register" class="btn btn-secondary btn-block">Kostenlos starten</a>
           <ul class="price-features">
             <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>3 Rechnungen pro Monat</li>
             <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Bis zu 5 Kunden</li>
-            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PDF-Export &amp; Live-Vorschau</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>E-Rechnung (ZUGFeRD &amp; XRechnung)</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PDF &amp; E-Mail-Versand</li>
             <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Dashboard mit offenen Posten</li>
             <li class="muted"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hinweis „Erstellt mit Fakturo“</li>
           </ul>
@@ -311,13 +349,17 @@
             <tr><td>Kunden</td><td>5</td><td>Unbegrenzt</td><td>Unbegrenzt</td></tr>
             <tr><td>Angebote</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
             <tr><td>Wiederkehrende Rechnungen</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><td>E-Rechnung (ZUGFeRD &amp; XRechnung)</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Stornorechnungen</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Reverse-Charge &amp; Drittland</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
             <tr class="group"><td colspan="4">Erscheinungsbild</td></tr>
             <tr><td>PDF-Export &amp; Druck</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
             <tr><td>Eigenes Logo &amp; Farbe</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
             <tr><td>Ohne „Erstellt mit Fakturo“</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
             <tr class="group"><td colspan="4">Zahlungen &amp; Export</td></tr>
+            <tr><td>Versand per E-Mail mit PDF</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
             <tr><td>Dashboard &amp; offene Posten</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Zahlungserinnerungen &amp; Mahnungen</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Zahlungserinnerungen &amp; Mahnungen per E-Mail</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
             <tr><td>CSV-Export</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           </tbody>
         </table>
@@ -335,31 +377,39 @@
       <div class="faq">
         <details open>
           <summary>Ist der Starter-Plan wirklich kostenlos?</summary>
-          <p>Ja. Du kannst jeden Monat bis zu 3 Rechnungen schreiben, ohne etwas zu bezahlen – zeitlich unbegrenzt und ohne Kreditkarte. Wenn du mehr brauchst, wechselst du jederzeit in Pro oder Business.</p>
+          <p>Ja. Du kannst jeden Monat bis zu 3 Rechnungen abschließen und verschicken – zeitlich unbegrenzt und ohne Kreditkarte. Entwürfe kannst du beliebig viele anlegen. Wenn du mehr brauchst, wechselst du jederzeit in Pro oder Business.</p>
+        </details>
+        <details>
+          <summary>Was ist eine E-Rechnung und brauche ich das?</summary>
+          <p>Eine E-Rechnung ist eine Rechnung in einem maschinenlesbaren Format (XRechnung oder ZUGFeRD), die Buchhaltungsprogramme automatisch einlesen können. Seit 2025 müssen alle Unternehmen in Deutschland E-Rechnungen empfangen können, ab 2027 bzw. 2028 müssen sie Rechnungen an andere Unternehmen auch elektronisch ausstellen. Fakturo bettet die E-Rechnung automatisch in jedes Rechnungs-PDF ein (ZUGFeRD) und erzeugt auf Wunsch eine XRechnung – auch im kostenlosen Plan.</p>
         </details>
         <details>
           <summary>Wie funktioniert die kostenlose Testphase?</summary>
-          <p>Wenn du Pro oder Business wählst, kannst du 14 Tage lang alle Funktionen gratis nutzen. Du kannst vor Ablauf kündigen, dann wird nichts berechnet.</p>
+          <p>Wenn du Pro oder Business wählst, nutzt du 14 Tage lang alle Funktionen kostenlos. Kündigst du vor Ablauf, wird nichts berechnet.</p>
         </details>
         <details>
-          <summary>Wie kann ich kündigen?</summary>
-          <p>Unter „Abo“ in deinem Konto öffnest du das Kundenportal und kündigst mit zwei Klicks. Dein Plan bleibt bis zum Ende des bezahlten Zeitraums aktiv, danach wechselst du automatisch in den kostenlosen Plan. Deine Daten bleiben erhalten.</p>
+          <summary>Kann ich Rechnungen nachträglich ändern?</summary>
+          <p>Solange eine Rechnung ein Entwurf ist, ja. Sobald du sie abschließt, erhält sie ihre endgültige Nummer und ist – wie vom Finanzamt verlangt – unveränderbar. Für Korrekturen erstellt Fakturo mit einem Klick eine Stornorechnung, danach schreibst du eine neue Rechnung.</p>
         </details>
         <details>
           <summary>Eignet sich Fakturo für Kleinunternehmer nach § 19 UStG?</summary>
-          <p>Ja. Aktiviere in den Einstellungen die Kleinunternehmerregelung – dann wird keine Umsatzsteuer berechnet und der vorgeschriebene Hinweis automatisch auf jede Rechnung gedruckt.</p>
+          <p>Ja. Aktiviere die Kleinunternehmerregelung in den Einstellungen – dann wird keine Umsatzsteuer berechnet und der Pflichthinweis automatisch auf jede Rechnung gedruckt. Auch Reverse-Charge für EU-Firmenkunden und Leistungen in Drittländer werden unterstützt.</p>
         </details>
         <details>
           <summary>Welche Angaben stehen auf meinen Rechnungen?</summary>
-          <p>Die Vorlage enthält Felder für alle Pflichtangaben nach § 14 UStG: vollständiger Name und Anschrift beider Parteien, Steuernummer oder USt-IdNr., Rechnungsdatum, fortlaufende Rechnungsnummer, Leistungszeitraum, Menge und Art der Leistung, Nettobetrag, Steuersatz und Steuerbetrag. Ob deine Angaben vollständig sind, prüfst du am besten einmalig mit deiner Steuerberatung.</p>
+          <p>Alle Pflichtangaben nach § 14 UStG: vollständiger Name und Anschrift beider Parteien, Steuernummer oder USt-IdNr., Rechnungsdatum, fortlaufende Rechnungsnummer, Leistungsdatum bzw. -zeitraum, Menge und Art der Leistung, Nettobetrag, Steuersatz und Steuerbetrag. Fakturo lässt dich eine Rechnung erst abschließen, wenn diese Angaben vollständig sind. Ersetzt das eine Steuerberatung? Nein – aber deine Steuerberatung wird sich über saubere Unterlagen freuen.</p>
         </details>
         <details>
-          <summary>Wie bezahle ich das Abo?</summary>
-          <p>Die Zahlung läuft sicher über Stripe – per Kreditkarte, SEPA-Lastschrift und weiteren Zahlungsarten. Für jede Zahlung bekommst du automatisch eine Rechnung.</p>
+          <summary>Kann ich Fakturo ausprobieren, ohne mich zu registrieren?</summary>
+          <p>Ja. Mit der Live-Demo siehst du ein Konto mit Beispieldaten und kannst alles anklicken. Die Demo wird nach 24 Stunden automatisch gelöscht.</p>
         </details>
         <details>
-          <summary>Kann ich später den Plan wechseln?</summary>
-          <p>Jederzeit. Upgrades gelten sofort, die Differenz wird anteilig verrechnet. Bei einem Downgrade bleibt alles Erstellte erhalten.</p>
+          <summary>Wie kann ich kündigen?</summary>
+          <p>Unter „Abo &amp; Zahlung“ öffnest du das Kundenportal und kündigst mit zwei Klicks. Dein Plan bleibt bis zum Ende des bezahlten Zeitraums aktiv, danach wechselst du automatisch in den kostenlosen Plan. Deine Daten bleiben erhalten.</p>
+        </details>
+        <details>
+          <summary>Wo liegen meine Daten?</summary>
+          <p>Deine Daten gehören dir: Wir verwenden kein Tracking, keine Werbe-Cookies und laden keine Inhalte von Drittanbietern. Du kannst deine Rechnungen jederzeit als PDF und CSV exportieren und dein Konto selbst löschen. Die Zahlung für dein Abo wickelt Stripe ab – deine Kartendaten erreichen unsere Server nie.</p>
         </details>
       </div>
     </div>
@@ -371,7 +421,7 @@
       <div class="cta-band">
         <h2>Deine nächste Rechnung ist in 2 Minuten fertig.</h2>
         <p>Erstelle jetzt dein kostenloses Konto und schreib deine erste Rechnung – ganz ohne Kreditkarte.</p>
-        <a href="/register" class="btn btn-primary btn-lg">Kostenlos starten</a>
+        <div class="cta-actions"><a href="/register" class="btn btn-primary btn-lg">Kostenlos starten</a><button type="button" class="btn btn-ghost-dark btn-lg" data-demo>Live-Demo ansehen</button></div>
         <ul class="trust-line">
           <li>Kostenloser Plan für immer</li>
           <li>·</li>
@@ -393,11 +443,11 @@
       </div>
       <div>
         <h4>Produkt</h4>
-        <ul><li><a href="#funktionen">Funktionen</a></li><li><a href="#preise">Preise</a></li><li><a href="#faq">FAQ</a></li></ul>
+        <ul><li><a href="#funktionen">Funktionen</a></li><li><a href="#e-rechnung">E-Rechnung</a></li><li><a href="#preise">Preise</a></li><li><a href="#faq">FAQ</a></li></ul>
       </div>
       <div>
         <h4>Konto</h4>
-        <ul><li><a href="/register">Registrieren</a></li><li><a href="/login">Anmelden</a></li></ul>
+        <ul><li><a href="/register">Registrieren</a></li><li><a href="/login">Anmelden</a></li><li><button type="button" class="link-btn footer-link" data-demo>Live-Demo</button></li></ul>
       </div>
       <div>
         <h4>Rechtliches</h4>

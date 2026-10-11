@@ -20,15 +20,15 @@ function verifyPassword(password, stored) {
 
 const sha256 = (s) => crypto.createHash('sha256').update(s).digest('hex');
 
-function createSession(res, userId) {
+function createSession(res, userId, days = SESSION_DAYS) {
   const token = crypto.randomBytes(32).toString('base64url');
-  const expires = Date.now() + SESSION_DAYS * 86400000;
+  const expires = Date.now() + days * 86400000;
   db.prepare('INSERT INTO sessions (token_hash, user_id, expires_at) VALUES (?, ?, ?)').run(sha256(token), userId, expires);
   res.cookie(COOKIE, token, {
     httpOnly: true,
     sameSite: 'lax',
     secure: process.env.NODE_ENV === 'production',
-    maxAge: SESSION_DAYS * 86400000,
+    maxAge: days * 86400000,
     path: '/',
   });
 }
@@ -64,6 +64,24 @@ function requireAuth(req, res, next) {
   next();
 }
 
+// Passwort zurücksetzen: Einmal-Token, 1 Stunde gültig, nur als Hash gespeichert.
+function createPasswordReset(userId) {
+  const token = crypto.randomBytes(32).toString('base64url');
+  db.prepare('DELETE FROM password_resets WHERE user_id = ?').run(userId);
+  db.prepare('INSERT INTO password_resets (token_hash, user_id, expires_at) VALUES (?, ?, ?)').run(sha256(token), userId, Date.now() + 3600000);
+  return token;
+}
+
+function consumePasswordReset(token, newPassword) {
+  const row = db.prepare('SELECT * FROM password_resets WHERE token_hash = ? AND expires_at > ?').get(sha256(String(token)), Date.now());
+  if (!row) return null;
+  db.prepare('DELETE FROM password_resets WHERE user_id = ?').run(row.user_id);
+  db.prepare('UPDATE users SET password_hash = ? WHERE id = ?').run(hashPassword(newPassword), row.user_id);
+  // Alle bestehenden Sitzungen beenden – falls jemand Fremdes angemeldet war.
+  db.prepare('DELETE FROM sessions WHERE user_id = ?').run(row.user_id);
+  return row.user_id;
+}
+
 // Einfache Bremse gegen Brute-Force auf Login/Registrierung.
 const attempts = new Map();
 function rateLimit(key, max = 10, windowMs = 15 * 60000) {
@@ -80,8 +98,19 @@ function rateLimit(key, max = 10, windowMs = 15 * 60000) {
 
 setInterval(() => {
   db.prepare('DELETE FROM sessions WHERE expires_at < ?').run(Date.now());
+  db.prepare('DELETE FROM password_resets WHERE expires_at < ?').run(Date.now());
   const now = Date.now();
   for (const [k, v] of attempts) if (v.reset < now) attempts.delete(k);
 }, 3600000).unref();
 
-module.exports = { hashPassword, verifyPassword, createSession, destroySession, currentUser, requireAuth, rateLimit };
+module.exports = {
+  hashPassword,
+  verifyPassword,
+  createSession,
+  destroySession,
+  currentUser,
+  requireAuth,
+  rateLimit,
+  createPasswordReset,
+  consumePasswordReset,
+};

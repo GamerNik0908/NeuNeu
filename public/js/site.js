@@ -48,6 +48,24 @@
     update();
   }
 
+  // Live-Demo: legt ein Demo-Konto mit Beispieldaten an und öffnet die App
+  document.querySelectorAll('[data-demo]').forEach((btn) =>
+    btn.addEventListener('click', async () => {
+      const label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Demo wird vorbereitet …';
+      try {
+        const res = await fetch('/api/auth/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' });
+        if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || 'Die Demo ist gerade nicht verfügbar.');
+        location.href = '/app';
+      } catch (err) {
+        alert(err.message);
+        btn.disabled = false;
+        btn.textContent = label;
+      }
+    })
+  );
+
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();

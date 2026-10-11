@@ -3,34 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#ffffff">
   <title>Fakturo</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/app.css">
 </head>
 <body class="app">
+  <a class="skip-link" href="#view">Zum Inhalt springen</a>
   <div class="shell" id="shell">
-    <aside class="sidebar" id="sidebar">
+    <aside class="sidebar" id="sidebar" aria-label="Seitenleiste">
       <a href="#/" class="brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4fd8"/><path d="M10 9h12M10 15h8M10 21h5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="22" cy="21" r="3" fill="#6ee7a8"/></svg>Fakturo</a>
       <nav class="side-nav" id="sideNav" aria-label="App-Navigation"></nav>
       <div class="plan-box" id="planBox"></div>
       <div class="user-row" id="userRow"></div>
     </aside>
-    <div>
+    <div class="menu-scrim" id="menuScrim" aria-hidden="true"></div>
+    <div class="main-col">
       <header class="topbar">
-        <button class="icon-btn" id="menuBtn" aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <button class="icon-btn" id="menuBtn" aria-label="Menü öffnen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
         <a href="#/" class="brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4fd8"/><path d="M10 9h12M10 15h8M10 21h5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="22" cy="21" r="3" fill="#6ee7a8"/></svg>Fakturo</a>
-        <a href="#/dokument/neu" class="icon-btn" aria-label="Neue Rechnung"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></a>
+        <a href="#/dokument/neu" class="icon-btn" aria-label="Neue Rechnung"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></a>
       </header>
-      <main class="main" id="view"><div class="loading"><div class="spinner"></div></div></main>
+      <div id="topBanner"></div>
+      <main class="main" id="view" tabindex="-1"><div class="loading"><div class="spinner"></div></div></main>
     </div>
   </div>
   <div id="modalRoot"></div>
   <div class="toasts" id="toasts" aria-live="polite"></div>
-  <div id="print"></div>
   <script src="/js/app.js"></script>
 </body>
 </html>

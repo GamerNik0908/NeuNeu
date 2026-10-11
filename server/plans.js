@@ -48,7 +48,7 @@ const PLANS = {
 
 function planFor(user) {
   // Ein Abo zählt nur, solange es aktiv (oder in der Testphase) ist.
-  const active = ['active', 'trialing', 'past_due'].includes(user.plan_status);
+  const active = ['active', 'trialing', 'past_due', 'demo'].includes(user.plan_status);
   if (!active || !PLANS[user.plan]) return PLANS.free;
   if (user.current_period_end && user.current_period_end * 1000 < Date.now() - 3 * 86400000) {
     return PLANS.free;

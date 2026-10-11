@@ -1,119 +1,178 @@
 # Fakturo – Rechnungsprogramm mit monatlichem Abo
 
 Fakturo ist eine fertige SaaS-Website: **Landingpage + Web-App + Abo-Bezahlung über Stripe**.
-Zielgruppe sind Selbstständige, Freelancer und Kleinunternehmer in Deutschland, die Rechnungen
-und Angebote schreiben müssen – ein Problem, das jeden Monat wiederkommt und deshalb gut zu einem Abo passt.
+Zielgruppe: Selbstständige, Freelancer und Kleinunternehmer in Deutschland. Sie müssen jeden Monat
+Rechnungen schreiben – und ab 2027/2028 als **E-Rechnung**. Das ist ein wiederkehrendes Problem
+mit gesetzlichem Druck, also genau das, wofür Menschen ein Abo bezahlen.
 
-## Warum genau dieses Produkt?
+![Landingpage](docs/screenshots/landing-hero.png)
+
+## Schnellstart (Windows, macOS, Linux)
+
+Voraussetzung: [Node.js](https://nodejs.org) in Version **22.5 oder neuer** (LTS-Version installieren).
+
+```
+git clone https://github.com/GamerNik0908/NeuNeu.git
+cd NeuNeu
+git checkout claude/website-monthly-subscriptions-ivuih2
+npm install
+npm start
+```
+
+Dann im Browser **http://localhost:3000** öffnen. Zum Beenden im Terminal `Strg + C`.
+
+Ohne weitere Einrichtung läuft Fakturo im **Testbetrieb**: Upgrades werden ohne Zahlung freigeschaltet
+und Rechnungen versendet man über das eigene E-Mail-Programm. Auf der Startseite kannst du über
+**„Live-Demo ansehen“** sofort ein Konto mit Beispieldaten ausprobieren.
+
+```
+npm test        # automatisierte Tests (API, Rechenlogik, E-Rechnung, Sicherheit)
+```
+
+## Warum dieses Produkt verkauft
 
 | Frage | Antwort |
 | --- | --- |
-| Wer zahlt? | ~4 Mio. Selbstständige in DE müssen Rechnungen mit Pflichtangaben (§ 14 UStG) schreiben. |
+| Wer zahlt? | Millionen Selbstständige in Deutschland müssen Rechnungen mit Pflichtangaben (§ 14 UStG) schreiben. |
+| Warum jetzt? | E-Rechnungspflicht: Empfang seit 2025, Versand ab 2027 (über 800.000 € Umsatz) bzw. 2028 (alle). Word-Vorlagen reichen dann nicht mehr. |
 | Warum monatlich? | Rechnungen fallen jeden Monat an – der Nutzen wiederholt sich, also bleibt das Abo. |
-| Warum upgraden? | Der kostenlose Plan ist bewusst auf 3 Rechnungen/Monat begrenzt. Wer regelmäßig arbeitet, stößt daran – und bekommt genau dann ein Upgrade-Angebot. |
-| Warum vertrauen? | Kostenloser Start ohne Kreditkarte, 14 Tage Testphase, monatlich kündbar, Zahlung über Stripe. |
+| Warum upgraden? | Der kostenlose Plan erlaubt 3 abgeschlossene Rechnungen pro Monat. Wer regelmäßig arbeitet, stößt daran – und bekommt genau in dem Moment ein Upgrade-Angebot (der Entwurf bleibt gespeichert). |
+| Warum vertrauen? | Live-Demo ohne Anmeldung, kostenloser Start ohne Kreditkarte, 14 Tage Testphase, monatlich kündbar, keine Tracker. |
 
 ## Pläne
 
 | | Starter | Pro | Business |
 | --- | --- | --- | --- |
 | Preis | 0 € | 9 €/Monat (84 €/Jahr) | 19 €/Monat (180 €/Jahr) |
-| Rechnungen | 3 pro Monat | unbegrenzt | unbegrenzt |
+| Abgeschlossene Rechnungen | 3 pro Monat | unbegrenzt | unbegrenzt |
 | Kunden | 5 | unbegrenzt | unbegrenzt |
+| E-Rechnung (ZUGFeRD & XRechnung), E-Mail-Versand, Storno | ✓ | ✓ | ✓ |
 | Angebote → Rechnung | – | ✓ | ✓ |
-| Logo, ohne „Erstellt mit Fakturo“ | – | ✓ | ✓ |
-| Zahlungserinnerungen/Mahnungen | – | ✓ | ✓ |
+| Eigenes Logo, ohne „Erstellt mit Fakturo“ | – | ✓ | ✓ |
+| Zahlungserinnerungen & Mahnungen | – | ✓ | ✓ |
 | CSV-Export für die Steuer | – | ✓ | ✓ |
 | Wiederkehrende Rechnungen | – | – | ✓ |
 
-Preise und Limits änderst du in `server/plans.js` (und die Texte in `public/index.html`).
+Preise und Limits stehen in `server/plans.js` (die Texte der Landingpage in `public/index.html`).
 
-## Was die Website kann
+## Funktionen
 
-- **Landingpage** (`/`): Hero mit Produkt-Vorschau, Vorher/Nachher, Funktionen, 3-Schritte-Erklärung,
-  Ersparnis-Rechner („Lohnt sich das?“), Preise mit Monat/Jahr-Umschalter, Vergleichstabelle, FAQ.
-- **Registrierung & Login** mit sicheren Passwörtern (scrypt) und Sitzungs-Cookie.
-- **Onboarding**: Firmendaten in 2 Minuten, dann direkt zur ersten Rechnung.
-- **Dashboard**: offene, überfällige und bezahlte Beträge, Umsatz der letzten 6 Monate, Einrichtungs-Checkliste.
-- **Rechnungs-Editor mit Live-Vorschau**, automatische fortlaufende Nummern, mehrere Steuersätze,
-  Kleinunternehmerregelung (§ 19 UStG), PDF-Export über den Druckdialog.
-- **Status-Verwaltung**: Entwurf → versendet → bezahlt / storniert. Versendete Rechnungen sind
-  gesperrt (keine nachträgliche Änderung).
-- **Angebote**, die mit einem Klick zur Rechnung werden.
-- **E-Mail-Versand** mit vorformuliertem Text, **Zahlungserinnerung, 1. und 2. Mahnung**.
-- **Kundenverwaltung**, **CSV-Export**, **wiederkehrende Rechnungen** (werden automatisch erzeugt).
-- **Abo-Seite** mit Upgrade, Stripe Checkout und Stripe-Kundenportal (Kündigen, Zahlungsart, Rechnungen).
-- **Upgrade-Hinweise genau im richtigen Moment** (Limit erreicht, Pro-Funktion angeklickt).
+**Rechnungen nach deutschem Recht**
+- Alle Pflichtangaben nach § 14 UStG. Eine Rechnung lässt sich erst abschließen, wenn sie vollständig ist –
+  Fakturo sagt genau, was fehlt.
+- **Lückenlose Nummern:** Entwürfe haben noch keine Nummer, sie wird erst beim Abschließen vergeben.
+  Gelöschte Entwürfe hinterlassen daher keine Lücken.
+- **Unveränderbar nach Abschluss.** Absender- und Kundendaten werden eingefroren – spätere Änderungen
+  am Profil verändern alte Rechnungen nicht.
+- **Echte Stornorechnungen** mit eigener Nummer statt „Status: storniert“.
+- **Steuerfälle:** Regelbesteuerung (19 %/7 %/0 %, gemischt), Kleinunternehmer (§ 19 UStG),
+  Reverse-Charge für EU-Firmenkunden, nicht steuerbare Leistungen in Drittländer – inkl. Pflichthinweisen.
+  Fakturo schlägt den passenden Fall anhand des Kundenlands automatisch vor.
+- Kaufmännische Rundung, Steuer je Steuersatz auf die Summe (wie EN 16931 es verlangt).
 
-## Starten
+**E-Rechnung**
+- Jedes PDF einer abgeschlossenen Rechnung ist ein **ZUGFeRD/Factur-X-PDF (PDF/A-3, Profil EN 16931)**.
+- **XRechnung 3.0** (UN/CEFACT CII) als XML-Download oder E-Mail-Anhang, inkl. Leitweg-ID.
+- Beim Entwickeln mit dem Mustang-Validator (KoSIT-Regeln, veraPDF) geprüft: gültig für alle vier Steuerfälle
+  und Stornorechnungen. Siehe „E-Rechnungen selbst prüfen“ unten.
 
-Voraussetzung: Node.js 22.5 oder neuer.
+**Arbeitsablauf**
+- Editor mit Live-Vorschau, Vorschlägen aus früheren Positionen, Warnung bei ungespeicherten Änderungen (Strg+S speichert).
+- „Abschließen & senden“: Versand per E-Mail mit PDF (und optional XRechnung) im Anhang, Antworten gehen an den Nutzer.
+- Zahlungserinnerung, 1. und 2. Mahnung mit fertigen Texten.
+- Verlauf je Rechnung (erstellt, abgeschlossen, versendet, bezahlt, erinnert, storniert).
+- Dashboard: offen, überfällig, bezahlt, Ø Zahlungsdauer, Umsatz der letzten 12 Monate, Top-Kunden.
+- Kunden mit Kundennummern, Länderauswahl, USt-IdNr.; IBAN-Prüfung gegen Tippfehler.
+- Angebote → Rechnung, Duplizieren, wiederkehrende Rechnungen, CSV-Export (Excel-kompatibel).
 
-```bash
-npm install
-npm start          # http://localhost:3000
-npm test           # automatisierte Tests
-```
+**Konto & Abo**
+- Registrierung, Login, **Passwort vergessen**, Live-Demo-Konten (werden nach 24 Std. gelöscht).
+- Stripe Checkout mit Testphase, Kundenportal (Kündigen, Zahlungsart, Belege), Webhooks.
+- Beim Löschen des Kontos wird ein laufendes Abo sofort beendet.
 
-Ohne Stripe-Schlüssel läuft die App im **Demo-Modus**: Upgrades werden ohne Zahlung sofort
-aktiviert, damit du alles ausprobieren kannst. Die Daten liegen in `data/fakturo.db` (SQLite).
+**Technik & Sicherheit**
+- Node.js + Express + SQLite (eingebaut in Node), keine schweren Abhängigkeiten.
+- Passwörter mit scrypt, Sitzungen nur als Hash gespeichert, Rate-Limits, CSRF-Schutz, strenge Content-Security-Policy.
+- **Keine externen Anfragen** (Schrift lokal, kein Google Fonts, keine Tracker) – kein Cookie-Banner nötig.
+- Automatische Datenbank-Migrationen und tägliche Backups (`data/backups/`, 14 Tage).
+
+## E-Mail-Versand einrichten (empfohlen)
+
+Ohne SMTP laden Nutzer das PDF herunter und versenden es selbst. Mit SMTP geht es mit einem Klick:
+
+1. Konto bei einem E-Mail-Dienst anlegen (z. B. [Brevo](https://www.brevo.com), Postmark, Mailjet) oder die SMTP-Daten deines Webhosters nutzen.
+2. Deine Absender-Domain dort verifizieren (SPF/DKIM-Einträge setzen – sonst landen Mails im Spam).
+3. In der `.env` eintragen: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM` (siehe `.env.example`).
+
+Rechnungen gehen dann als „Name des Nutzers via Fakturo“ raus; Antworten landen beim Nutzer (Reply-To).
 
 ## Echte Abos mit Stripe einrichten
 
 1. Konto auf [stripe.com](https://stripe.com) anlegen (erst im **Testmodus** arbeiten).
 2. Unter **Produktkatalog** zwei Produkte anlegen: „Fakturo Pro“ und „Fakturo Business“,
    jeweils mit zwei wiederkehrenden Preisen (monatlich 9 € / jährlich 84 € bzw. 19 € / 180 €).
-3. `.env.example` nach `.env` kopieren und eintragen:
-   - `STRIPE_SECRET_KEY` (Entwickler → API-Schlüssel)
-   - die vier `STRIPE_PRICE_…`-IDs (beginnen mit `price_`)
-   - `APP_URL` = deine öffentliche Adresse, z. B. `https://fakturo.de`
+3. `.env.example` nach `.env` kopieren und eintragen: `STRIPE_SECRET_KEY`, die vier `STRIPE_PRICE_…`-IDs, `APP_URL`.
 4. **Webhook** anlegen (Entwickler → Webhooks) mit der URL `https://DEINE-DOMAIN/api/stripe/webhook`
    und den Ereignissen `checkout.session.completed`, `customer.subscription.created`,
-   `customer.subscription.updated`, `customer.subscription.deleted`.
-   Das Signing-Secret als `STRIPE_WEBHOOK_SECRET` in die `.env`.
+   `customer.subscription.updated`, `customer.subscription.deleted`. Das Signing-Secret als `STRIPE_WEBHOOK_SECRET` eintragen.
    Lokal testen: `stripe listen --forward-to localhost:3000/api/stripe/webhook`.
-5. **Kundenportal** aktivieren (Einstellungen → Billing → Kundenportal): Kündigen, Planwechsel
-   zwischen Pro/Business und Zahlungsart ändern erlauben.
-6. Empfohlen: In Stripe **automatische Rechnungen** und **Stripe Tax** aktivieren, damit
-   deine Kunden für ihr Abo korrekte Rechnungen mit USt. bekommen.
+5. **Kundenportal** aktivieren (Einstellungen → Billing → Kundenportal): Kündigen, Planwechsel und Zahlungsart erlauben.
+6. Empfohlen: **automatische Rechnungen** und **Stripe Tax** aktivieren.
 7. Testkauf mit Karte `4242 4242 4242 4242` – danach auf Live-Schlüssel umstellen.
 
 ## Online stellen
 
-Die App ist ein einzelner Node-Prozess mit SQLite – sie läuft z. B. auf einem kleinen
-VPS (Hetzner, ~5 €/Monat), Render, Railway oder Fly.io. Wichtig:
+Ein einzelner Node-Prozess mit SQLite – läuft z. B. auf einem kleinen VPS (Hetzner, ~5 €/Monat), Render, Railway oder Fly.io.
 
-- `NODE_ENV=production` setzen (sichere Cookies) und HTTPS verwenden.
-- Den Ordner `data/` auf einem dauerhaften Speicher ablegen und **regelmäßig sichern**.
+- `NODE_ENV=production` setzen und HTTPS verwenden (z. B. Caddy oder nginx davor).
+- Den Ordner `data/` auf dauerhaftem Speicher ablegen und die Backups zusätzlich extern sichern.
+- Health-Check: `GET /healthz`.
+
+## E-Rechnungen selbst prüfen
+
+Mit dem kostenlosen [Mustang-Validator](https://www.mustangproject.org) (Java):
+
+```
+java -jar Mustang-CLI.jar --action validate --source Rechnung_RE-2026-0001.pdf
+java -jar Mustang-CLI.jar --action validate --source Rechnung_RE-2026-0001_XRechnung.xml
+```
+
+Alternativ das Prüfportal der KoSIT bzw. Online-Validatoren. Prüfe das vor dem Livegang einmal mit deinen echten Firmendaten.
 
 ## Vor dem Livegang (Pflicht in Deutschland)
 
-- [ ] **Impressum, Datenschutzerklärung und AGB** in `public/legal/` mit echten Angaben füllen
-      und rechtlich prüfen lassen.
+- [ ] **Impressum, Datenschutzerklärung und AGB** in `public/legal/` mit echten Angaben füllen und rechtlich prüfen lassen
+      (inkl. Auftragsverarbeitungsvertrag, da Nutzer Kundendaten speichern).
 - [ ] Gewerbe anmelden; die Abo-Einnahmen sind steuerpflichtig.
-- [ ] Optional: Schriftart „Inter“ lokal hosten statt über Google Fonts (Datenschutz).
-- [ ] Eigene Domain und E-Mail-Adresse für Support.
+- [ ] Eigene Domain, Support-E-Mail-Adresse, SMTP-Versand mit verifizierter Domain.
+- [ ] Hinweis: Fakturo schreibt Rechnungen, ist aber keine GoBD-zertifizierte Buchhaltung. Für die Archivierung
+      sollten Nutzer ihre PDFs zusätzlich ablegen (Export vorhanden).
 
 ## Ideen, um mehr Abos zu verkaufen
 
-- Auf Instagram/TikTok zeigen: „So schreibe ich eine Rechnung in 60 Sekunden“ (Bildschirmaufnahme).
-- Ratgeber-Artikel für Google: „Rechnung schreiben als Kleinunternehmer“, „Pflichtangaben Rechnung“.
-- In Freelancer-Gruppen (Facebook, Reddit, Discord) helfen und Fakturo verlinken.
-- Rabattcodes über Stripe (Promotion Codes sind im Checkout schon aktiviert), z. B. 3 Monate −50 %.
+- **E-Rechnungspflicht als Aufhänger:** Ratgeber-Artikel „E-Rechnung für Freelancer – was ab 2027 gilt“ für Google.
+- Kurze Videos (TikTok/Instagram/YouTube Shorts): „Rechnung in 60 Sekunden – inkl. E-Rechnung“ als Bildschirmaufnahme.
+- In Freelancer-Communities helfen und die Live-Demo verlinken – keine Anmeldung nötig, niedrige Hürde.
+- Stripe-Rabattcodes (im Checkout aktiv), z. B. „3 Monate −50 %“ für Gründer:innen.
+- Partnerschaften mit Steuerberatungen und Gründungsberatungen.
 
 ## Projektstruktur
 
 ```
 server/
-  index.js       Express-Server, alle API-Routen
-  plans.js       Pläne, Preise, Limits
-  billing.js     Stripe Checkout, Kundenportal, Webhooks (+ Demo-Modus)
-  documents.js   Rechnungen, Angebote, Steuerberechnung, wiederkehrende Rechnungen
-  auth.js        Passwörter, Sitzungen, Rate-Limit
-  db.js          SQLite-Schema
+  index.js          Server-Einstieg, Sicherheit, Hintergrundaufgaben
+  routes/account.js Registrierung, Login, Passwort, Demo, Profil
+  routes/documents.js Kunden, Rechnungen, Versand, E-Rechnung, Statistik, Export
+  documents.js      Rechnungslogik: Entwürfe, Abschluss, Storno, Steuerfälle
+  einvoice.js       XRechnung / ZUGFeRD (UN/CEFACT CII, EN 16931)
+  pdf.js            PDF/A-3 mit eingebetteter E-Rechnung
+  mailer.js         SMTP-Versand
+  billing.js        Stripe Checkout, Kundenportal, Webhooks
+  demo.js           Demo-Konten mit Beispieldaten
+  db.js             SQLite-Schema, Migrationen, Backups
 public/
-  index.html     Landingpage
-  app.html       Web-App (js/app.js)
-  login.html, register.html, legal/
-test/            API-Tests (node --test)
+  index.html        Landingpage
+  app.html          Web-App (js/app.js, css/app.css)
+  login/register/forgot/reset.html, legal/
+test/               automatisierte Tests (node --test)
 ```

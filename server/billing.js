@@ -96,6 +96,13 @@ async function createPortal(user, appUrl) {
   return { url: portal.url };
 }
 
+// Beim Löschen des Kontos das Abo sofort beenden, damit nicht weiter abgebucht wird.
+async function cancelImmediately(user) {
+  if (!isLive() || !user.stripe_subscription_id) return;
+  if (['canceled', 'incomplete_expired'].includes(user.plan_status)) return;
+  await stripe('DELETE', `/subscriptions/${user.stripe_subscription_id}`);
+}
+
 function demoCancel(user) {
   db.prepare("UPDATE users SET plan = 'free', plan_status = 'canceled', plan_interval = NULL, current_period_end = NULL WHERE id = ?").run(user.id);
 }
@@ -171,4 +178,4 @@ async function handleWebhook(rawBody, signature) {
   }
 }
 
-module.exports = { isLive, createCheckout, createPortal, demoCancel, handleWebhook, verifySignature };
+module.exports = { isLive, createCheckout, createPortal, cancelImmediately, demoCancel, handleWebhook, verifySignature };
