@@ -183,8 +183,8 @@ p { margin: 0 0 1em; }
 .mock-toast b { display: block; color: var(--ink); }
 .mock-stat {
   position: absolute;
-  left: -22px;
-  top: 64px;
+  left: -28px;
+  top: -22px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 12px;

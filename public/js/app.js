@@ -735,18 +735,24 @@
     const itemsEl = $('#items');
     let dirty = false;
 
+    const lineTotal = (it) => eur(round(parseNum(it.quantity) * parseNum(it.price)));
     function drawItems() {
       itemsEl.innerHTML =
-        `<div class="item-row${sb ? ' no-tax' : ''} item-head"><span>Beschreibung</span><span>Menge</span><span>Einheit</span><span>Preis (netto)</span>${sb ? '' : '<span>USt.</span>'}<span></span></div>` +
         d.items
           .map(
-            (it, i) => `<div class="item-row${sb ? ' no-tax' : ''}" data-i="${i}">
-            <textarea data-k="description" rows="1" placeholder="Leistung oder Produkt" aria-label="Beschreibung">${esc(it.description)}</textarea>
-            <input data-k="quantity" inputmode="decimal" value="${esc(it.quantity)}" aria-label="Menge">
-            <input data-k="unit" value="${esc(it.unit)}" placeholder="Stk." aria-label="Einheit" list="units">
-            <input data-k="price" inputmode="decimal" value="${esc(it.price)}" placeholder="0,00" aria-label="Einzelpreis">
-            ${sb ? '' : `<select data-k="taxRate" aria-label="Steuersatz">${[19, 7, 0].map((r) => `<option value="${r}" ${Number(it.taxRate) === r ? 'selected' : ''}>${r} %</option>`).join('')}</select>`}
-            <button type="button" class="icon-btn" data-remove="${i}" aria-label="Position entfernen" ${d.items.length === 1 ? 'style="visibility:hidden"' : ''}>${I.trash}</button>
+            (it, i) => `<div class="item" data-i="${i}">
+            <div class="item-top">
+              <span class="item-pos">${i + 1}</span>
+              <textarea data-k="description" rows="1" placeholder="Leistung oder Produkt beschreiben" aria-label="Beschreibung">${esc(it.description)}</textarea>
+              <button type="button" class="icon-btn" data-remove="${i}" aria-label="Position entfernen" ${d.items.length === 1 ? 'style="visibility:hidden"' : ''}>${I.trash}</button>
+            </div>
+            <div class="item-grid${sb ? ' no-tax' : ''}">
+              <label><span>Menge</span><input data-k="quantity" inputmode="decimal" value="${esc(it.quantity)}"></label>
+              <label><span>Einheit</span><input data-k="unit" value="${esc(it.unit)}" placeholder="Stk." list="units"></label>
+              <label><span>Preis (€)</span><input data-k="price" inputmode="decimal" value="${esc(it.price)}" placeholder="0,00"></label>
+              ${sb ? '' : `<label><span>USt.</span><select data-k="taxRate">${[19, 7, 0].map((r) => `<option value="${r}" ${Number(it.taxRate) === r ? 'selected' : ''}>${r} %</option>`).join('')}</select></label>`}
+              <div class="item-sum"><span>Summe</span><b data-sum>${lineTotal(it)}</b></div>
+            </div>
           </div>`
           )
           .join('') +
@@ -791,7 +797,11 @@
     };
     form.addEventListener('input', (e) => {
       const row = e.target.closest('[data-i]');
-      if (row) d.items[Number(row.dataset.i)][e.target.dataset.k] = e.target.dataset.k === 'taxRate' ? Number(e.target.value) : e.target.value;
+      if (row && e.target.dataset.k) {
+        const it = d.items[Number(row.dataset.i)];
+        it[e.target.dataset.k] = e.target.dataset.k === 'taxRate' ? Number(e.target.value) : e.target.value;
+        $('[data-sum]', row).textContent = lineTotal(it);
+      }
       if (e.target.name === 'issue_date' && !existing && F.issue_date.value) {
         F.due_date.value = addDays(F.issue_date.value, isQuote ? 30 : profile.payment_days);
       }
