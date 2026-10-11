@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fakturo – Rechnungen schreiben in 2 Minuten</title>
+  <meta name="description" content="Fakturo ist das Rechnungsprogramm für Selbstständige, Freelancer und Kleinunternehmer. Rechnungen & Angebote in Minuten erstellen, offene Posten im Blick behalten, Zahlungserinnerungen verschicken. Kostenlos starten.">
+  <meta property="og:title" content="Fakturo – Rechnungen schreiben in 2 Minuten">
+  <meta property="og:description" content="Rechnungen & Angebote für Selbstständige. Kostenlos starten, monatlich kündbar.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="/" class="brand" aria-label="Fakturo Startseite">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4fd8"/><path d="M10 9h12M10 15h8M10 21h5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="22" cy="21" r="3" fill="#6ee7a8"/></svg>
+      Fakturo
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#funktionen">Funktionen</a>
+      <a href="#so-gehts">So geht's</a>
+      <a href="#preise">Preise</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="/login" class="btn btn-ghost">Anmelden</a>
+      <a href="/register" class="btn btn-primary">Kostenlos starten</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="pill"><b>Neu</b> Angebote mit einem Klick in Rechnungen umwandeln</div>
+        <h1>Rechnungen schreiben in <span class="hl">2&nbsp;Minuten.</span> Nicht in 2&nbsp;Stunden.</h1>
+        <p class="hero-lead">Fakturo ist das Rechnungsprogramm für Selbstständige, Freelancer und Kleinunternehmer. Professionelle Rechnungen und Angebote erstellen, offene Beträge im Blick behalten – und schneller bezahlt werden.</p>
+        <div class="hero-actions">
+          <a href="/register" class="btn btn-primary btn-lg">Kostenlos starten
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#preise" class="btn btn-secondary btn-lg">Preise ansehen</a>
+        </div>
+        <ul class="trust-line">
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Für immer kostenloser Plan</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Keine Kreditkarte nötig</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Monatlich kündbar</li>
+        </ul>
+      </div>
+
+      <div class="mock" aria-hidden="true">
+        <div class="mock-stat"><span>Offen</span><b>2.380,00 €</b></div>
+        <div class="mock-window">
+          <div class="mock-bar"><span></span><span></span><span></span></div>
+          <div class="mock-body">
+            <div class="mock-form">
+              <div class="mock-label">Kunde</div>
+              <div class="mock-input">Nordlicht Studio GmbH</div>
+              <div class="mock-label">Position</div>
+              <div class="mock-row"><div class="mock-input">Webdesign Landingpage</div><div class="mock-input">1.200 €</div></div>
+              <div class="mock-row"><div class="mock-input">SEO-Basis-Setup</div><div class="mock-input">400 €</div></div>
+              <div class="mock-label">Zahlungsziel</div>
+              <div class="mock-input">14 Tage</div>
+              <div class="mock-btn">Als PDF speichern</div>
+            </div>
+            <div class="mock-paper">
+              <div class="ph">
+                <div class="mock-logo"></div>
+                <div class="mock-muted" style="text-align:right">Lena Weber Design<br>Hamburg</div>
+              </div>
+              <div class="mock-muted">Nordlicht Studio GmbH<br>Hafenstraße 12, 20457 Hamburg</div>
+              <h4 style="margin-top:14px">Rechnung RE-2026-0042</h4>
+              <div class="mock-muted">Datum: 11.10.2026 · Fällig: 25.10.2026</div>
+              <div class="mock-lines">
+                <div><span>Webdesign Landingpage</span><span>1.200,00 €</span></div>
+                <div><span>SEO-Basis-Setup</span><span>400,00 €</span></div>
+                <div class="mock-muted"><span>zzgl. 19 % USt.</span><span>304,00 €</span></div>
+              </div>
+              <div class="mock-total"><span>Gesamt</span><span>1.904,00 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mock-toast">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <div><b>Zahlung eingegangen</b><span class="mock-muted">RE-2026-0041 · 1.190,00 €</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAKTEN -->
+  <section class="facts">
+    <div class="container facts-grid">
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg><span><b>Pflichtangaben</b> nach § 14 UStG vorgesehen</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Kleinunternehmer</b> nach § 19 UStG? Ein Klick.</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/></svg><span><b>Fortlaufende Nummern</b> automatisch</span></div>
+      <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span><b>PDF &amp; CSV</b> für Kunden und Steuerberatung</span></div>
+    </div>
+  </section>
+
+  <!-- VORHER / NACHHER -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Warum Fakturo</span>
+        <h2>Schluss mit Word-Vorlagen und Excel-Listen</h2>
+        <p>Jede Stunde, die du mit Papierkram verbringst, kannst du nicht abrechnen. Fakturo nimmt dir die lästige Arbeit ab.</p>
+      </div>
+      <div class="compare">
+        <div class="compare-card">
+          <h3><span class="tag tag-gray">Ohne Fakturo</span></h3>
+          <ul>
+            <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Alte Rechnung kopieren, Nummer, Datum und Beträge von Hand ändern</li>
+            <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Rechenfehler bei Mehrwertsteuer und Summen</li>
+            <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Kein Überblick, wer noch nicht bezahlt hat</li>
+            <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Unangenehme Mahn-E-Mails selbst formulieren</li>
+            <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Am Jahresende alles für die Steuer zusammensuchen</li>
+          </ul>
+        </div>
+        <div class="compare-card after">
+          <h3><span class="tag tag-blue">Mit Fakturo</span></h3>
+          <ul>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kunde wählen, Positionen eintragen, fertig – Nummer und Datum kommen automatisch</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Netto, Steuer und Gesamtbetrag werden live berechnet</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Dashboard zeigt offene und überfällige Rechnungen auf einen Blick</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Freundliche Zahlungserinnerungen als fertige Vorlage</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Jahresexport als CSV – direkt an deine Steuerberatung</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNKTIONEN -->
+  <section class="section soft" id="funktionen">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Funktionen</span>
+        <h2>Alles, was du zum Abrechnen brauchst. Nichts, was dich aufhält.</h2>
+        <p>Fakturo ist bewusst schlank. Keine Buchhaltungs-Ausbildung nötig – einfach loslegen.</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+          <h3>Rechnungen mit Live-Vorschau</h3>
+          <p>Du siehst beim Tippen, wie deine Rechnung aussieht. Mit einem Klick als PDF speichern oder drucken.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="m9 10 2 2 4-4"/></svg></div>
+          <h3>Angebote <span class="plan-badge">Pro</span></h3>
+          <p>Schreibe Angebote im gleichen Look – und mach daraus nach der Zusage per Klick eine Rechnung.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
+          <h3>Offene Posten im Blick</h3>
+          <p>Dein Dashboard zeigt Umsatz, offene und überfällige Beträge. Du weißt immer, wo du stehst.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+          <h3>Zahlungserinnerungen <span class="plan-badge">Pro</span></h3>
+          <p>Höfliche Erinnerung, 1. und 2. Mahnung – als fertiger Text, den du direkt per E-Mail versendest.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
+          <h3>Wiederkehrende Rechnungen <span class="plan-badge">Business</span></h3>
+          <p>Retainer, Wartungsverträge, Mieten: Fakturo erstellt die Rechnung jeden Monat automatisch für dich.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg></div>
+          <h3>Export für die Steuer <span class="plan-badge">Pro</span></h3>
+          <p>Alle Rechnungen eines Jahres als CSV – sauber aufbereitet für Excel, Steuerberatung oder EÜR.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SO GEHT'S -->
+  <section class="section" id="so-gehts">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">So geht's</span>
+        <h2>In drei Schritten zur ersten Rechnung</h2>
+        <p>Die Einrichtung dauert weniger lang als ein Kaffee.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><h3>Firmendaten eintragen</h3><p>Name, Adresse, Steuernummer und Bankverbindung – einmal hinterlegen, auf jeder Rechnung automatisch dabei.</p></div>
+        <div class="step"><div class="step-num">2</div><h3>Kunde &amp; Positionen</h3><p>Kunden einmal anlegen und wiederverwenden. Leistungen eintragen – Steuer und Summe rechnet Fakturo.</p></div>
+        <div class="step"><div class="step-num">3</div><h3>Senden &amp; bezahlt werden</h3><p>PDF speichern, per E-Mail verschicken und mit einem Klick als bezahlt markieren, sobald das Geld da ist.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECHNER -->
+  <section class="section soft">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Lohnt sich das?</span>
+        <h2>Rechne selbst nach</h2>
+        <p>Wie viel Zeit und Geld dich deine Rechnungen gerade kosten.</p>
+      </div>
+      <div class="calc">
+        <div class="calc-inputs">
+          <div class="calc-field">
+            <label for="calcInvoices">Rechnungen pro Monat <output id="outInvoices">8</output></label>
+            <input type="range" id="calcInvoices" min="1" max="60" value="8">
+          </div>
+          <div class="calc-field">
+            <label for="calcMinutes">Minuten pro Rechnung heute <output id="outMinutes">25 min</output></label>
+            <input type="range" id="calcMinutes" min="5" max="90" step="5" value="25">
+          </div>
+          <div class="calc-field">
+            <label for="calcRate">Dein Stundensatz <output id="outRate">60 €</output></label>
+            <input type="range" id="calcRate" min="20" max="200" step="5" value="60">
+          </div>
+          <p class="calc-hint">Annahme: Mit Fakturo brauchst du rund 3 Minuten pro Rechnung.</p>
+        </div>
+        <div class="calc-result" aria-live="polite">
+          <span>Du gewinnst jeden Monat</span>
+          <div class="big" id="calcHours">2,9 Std.</div>
+          <span>Das entspricht einem Wert von <b id="calcValue" style="color:#fff">176 €</b> pro Monat.</span>
+          <div class="roi">Fakturo Pro kostet <b>9 € im Monat</b> – das ist <b id="calcRoi">20×</b> weniger als die Zeit, die du sparst.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREISE -->
+  <section class="section" id="preise">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Preise</span>
+        <h2>Einfache Preise. Monatlich kündbar.</h2>
+        <p>Starte kostenlos und wechsle, wenn du mehr brauchst. Alle Preise zzgl. gesetzlicher USt.</p>
+        <div class="billing-toggle" role="group" aria-label="Abrechnungszeitraum">
+          <button type="button" class="active" data-interval="monthly">Monatlich</button>
+          <button type="button" data-interval="yearly">Jährlich <span class="save-badge">2 Monate gratis</span></button>
+        </div>
+      </div>
+
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Starter</h3>
+          <p class="price-desc">Zum Ausprobieren und für den gelegentlichen Auftrag.</p>
+          <div class="price"><span class="amount">0 €</span><span class="per">/ Monat</span></div>
+          <div class="price-note">Für immer kostenlos</div>
+          <a href="/register" class="btn btn-secondary btn-block">Kostenlos starten</a>
+          <ul class="price-features">
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>3 Rechnungen pro Monat</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Bis zu 5 Kunden</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PDF-Export &amp; Live-Vorschau</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Dashboard mit offenen Posten</li>
+            <li class="muted"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hinweis „Erstellt mit Fakturo“</li>
+          </ul>
+        </div>
+
+        <div class="price-card featured">
+          <span class="ribbon">Beliebteste Wahl</span>
+          <h3>Pro</h3>
+          <p class="price-desc">Für Selbstständige, die regelmäßig abrechnen.</p>
+          <div class="price"><span class="amount" data-monthly="9 €" data-yearly="7 €">9 €</span><span class="per">/ Monat</span></div>
+          <div class="price-note" data-monthly="Monatlich kündbar" data-yearly="84 € jährlich abgerechnet">Monatlich kündbar</div>
+          <a href="/register?plan=pro" class="btn btn-primary btn-block" data-plan-link="pro">14 Tage gratis testen</a>
+          <ul class="price-features">
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Unbegrenzt</b> Rechnungen &amp; Kunden</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Angebote → Rechnung per Klick</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Eigenes Logo &amp; Markenfarbe</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Zahlungserinnerungen &amp; Mahnungen</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>CSV-Export für die Steuer</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ohne Fakturo-Hinweis</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <h3>Business</h3>
+          <p class="price-desc">Für Agenturen und alle mit festen Monatskunden.</p>
+          <div class="price"><span class="amount" data-monthly="19 €" data-yearly="15 €">19 €</span><span class="per">/ Monat</span></div>
+          <div class="price-note" data-monthly="Monatlich kündbar" data-yearly="180 € jährlich abgerechnet">Monatlich kündbar</div>
+          <a href="/register?plan=business" class="btn btn-secondary btn-block" data-plan-link="business">14 Tage gratis testen</a>
+          <ul class="price-features">
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Alles aus Pro</b>, plus:</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Wiederkehrende Rechnungen (automatisch)</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Monatlich, vierteljährlich oder jährlich</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Bevorzugter E-Mail-Support</li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Neue Funktionen zuerst</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pricing-foot">
+        <span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sichere Zahlung über Stripe</span>
+        <span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kündigung mit 2 Klicks</span>
+        <span><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Rechnungen für dein Abo inklusive</span>
+      </div>
+
+      <div class="table-wrap">
+        <table class="ptable">
+          <thead><tr><th>Im Detail</th><th>Starter</th><th>Pro</th><th>Business</th></tr></thead>
+          <tbody>
+            <tr class="group"><td colspan="4">Dokumente</td></tr>
+            <tr><td>Rechnungen pro Monat</td><td>3</td><td>Unbegrenzt</td><td>Unbegrenzt</td></tr>
+            <tr><td>Kunden</td><td>5</td><td>Unbegrenzt</td><td>Unbegrenzt</td></tr>
+            <tr><td>Angebote</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Wiederkehrende Rechnungen</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr class="group"><td colspan="4">Erscheinungsbild</td></tr>
+            <tr><td>PDF-Export &amp; Druck</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Eigenes Logo &amp; Farbe</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Ohne „Erstellt mit Fakturo“</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr class="group"><td colspan="4">Zahlungen &amp; Export</td></tr>
+            <tr><td>Dashboard &amp; offene Posten</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Zahlungserinnerungen &amp; Mahnungen</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>CSV-Export</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section soft" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Häufige Fragen</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Ist der Starter-Plan wirklich kostenlos?</summary>
+          <p>Ja. Du kannst jeden Monat bis zu 3 Rechnungen schreiben, ohne etwas zu bezahlen – zeitlich unbegrenzt und ohne Kreditkarte. Wenn du mehr brauchst, wechselst du jederzeit in Pro oder Business.</p>
+        </details>
+        <details>
+          <summary>Wie funktioniert die kostenlose Testphase?</summary>
+          <p>Wenn du Pro oder Business wählst, kannst du 14 Tage lang alle Funktionen gratis nutzen. Du kannst vor Ablauf kündigen, dann wird nichts berechnet.</p>
+        </details>
+        <details>
+          <summary>Wie kann ich kündigen?</summary>
+          <p>Unter „Abo“ in deinem Konto öffnest du das Kundenportal und kündigst mit zwei Klicks. Dein Plan bleibt bis zum Ende des bezahlten Zeitraums aktiv, danach wechselst du automatisch in den kostenlosen Plan. Deine Daten bleiben erhalten.</p>
+        </details>
+        <details>
+          <summary>Eignet sich Fakturo für Kleinunternehmer nach § 19 UStG?</summary>
+          <p>Ja. Aktiviere in den Einstellungen die Kleinunternehmerregelung – dann wird keine Umsatzsteuer berechnet und der vorgeschriebene Hinweis automatisch auf jede Rechnung gedruckt.</p>
+        </details>
+        <details>
+          <summary>Welche Angaben stehen auf meinen Rechnungen?</summary>
+          <p>Die Vorlage enthält Felder für alle Pflichtangaben nach § 14 UStG: vollständiger Name und Anschrift beider Parteien, Steuernummer oder USt-IdNr., Rechnungsdatum, fortlaufende Rechnungsnummer, Leistungszeitraum, Menge und Art der Leistung, Nettobetrag, Steuersatz und Steuerbetrag. Ob deine Angaben vollständig sind, prüfst du am besten einmalig mit deiner Steuerberatung.</p>
+        </details>
+        <details>
+          <summary>Wie bezahle ich das Abo?</summary>
+          <p>Die Zahlung läuft sicher über Stripe – per Kreditkarte, SEPA-Lastschrift und weiteren Zahlungsarten. Für jede Zahlung bekommst du automatisch eine Rechnung.</p>
+        </details>
+        <details>
+          <summary>Kann ich später den Plan wechseln?</summary>
+          <p>Jederzeit. Upgrades gelten sofort, die Differenz wird anteilig verrechnet. Bei einem Downgrade bleibt alles Erstellte erhalten.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABSCHLUSS -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Deine nächste Rechnung ist in 2 Minuten fertig.</h2>
+        <p>Erstelle jetzt dein kostenloses Konto und schreib deine erste Rechnung – ganz ohne Kreditkarte.</p>
+        <a href="/register" class="btn btn-primary btn-lg">Kostenlos starten</a>
+        <ul class="trust-line">
+          <li>Kostenloser Plan für immer</li>
+          <li>·</li>
+          <li>14 Tage Pro gratis testen</li>
+          <li>·</li>
+          <li>Monatlich kündbar</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4fd8"/><path d="M10 9h12M10 15h8M10 21h5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="22" cy="21" r="3" fill="#6ee7a8"/></svg>Fakturo</a>
+        <p style="margin-top:14px;max-width:320px">Das einfache Rechnungsprogramm für Selbstständige, Freelancer und Kleinunternehmer.</p>
+      </div>
+      <div>
+        <h4>Produkt</h4>
+        <ul><li><a href="#funktionen">Funktionen</a></li><li><a href="#preise">Preise</a></li><li><a href="#faq">FAQ</a></li></ul>
+      </div>
+      <div>
+        <h4>Konto</h4>
+        <ul><li><a href="/register">Registrieren</a></li><li><a href="/login">Anmelden</a></li></ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul><li><a href="/legal/impressum">Impressum</a></li><li><a href="/legal/datenschutz">Datenschutz</a></li><li><a href="/legal/agb">AGB</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Fakturo</span>
+      <span>Mit Sorgfalt für Selbstständige gemacht.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/site.js"></script>
+</body>
+</html>

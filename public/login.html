@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anmelden – Fakturo</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<div class="auth">
+  <aside class="auth-side">
+    <a href="/" class="brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4fd8"/><path d="M10 9h12M10 15h8M10 21h5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="22" cy="21" r="3" fill="#6ee7a8"/></svg>Fakturo</a>
+    <div>
+      <h2>Weniger Papierkram. Mehr Zeit für deine Kunden.</h2>
+      <ul>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Professionelle Rechnungen in 2 Minuten</li>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Offene und überfällige Beträge auf einen Blick</li>
+        <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kostenlos starten, monatlich kündbar</li>
+      </ul>
+    </div>
+    <span style="font-size:.85rem;color:#8a96ad">© Fakturo</span>
+  </aside>
+  <main class="auth-main">
+    <div class="auth-card">
+      <h1>Willkommen zurück</h1>
+      <p class="sub">Melde dich an, um deine Rechnungen zu verwalten.</p>
+      <form id="authForm" data-mode="login" novalidate>
+        <div class="form-error" id="formError" role="alert"></div>
+        <div class="field"><label for="email">E-Mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="password">Passwort</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+        <button class="btn btn-primary btn-block btn-lg" type="submit">Anmelden</button>
+      </form>
+      <p class="auth-switch">Noch kein Konto? <a href="/register">Kostenlos registrieren</a></p>
+    </div>
+  </main>
+</div>
+<script src="/js/auth.js"></script>
+</body>
+</html>
